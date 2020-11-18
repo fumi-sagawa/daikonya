@@ -15,7 +15,7 @@ body {
 
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
   vertical-align: bottom;
 }
 
@@ -73,6 +73,9 @@ header {
   top: 47px;
   left: 57px;
   position: fixed;
+}
+header img {
+  height: auto;
 }
 @media (max-width: 767px) {
   header {
@@ -156,11 +159,15 @@ header a .logo_type {
 
 .mobile_navigation {
   opacity: 0%;
+  visibility: hidden;
   position: fixed;
   z-index: 100;
   height: 100vh;
   width: 100vw;
   background-color: #292320;
+}
+.mobile_navigation img {
+  height: auto;
 }
 @media (min-width: 767px) {
   .mobile_navigation {
@@ -325,6 +332,30 @@ header a .logo_type {
     font-size: calc(14px + 6 * (100vw - 768px) / 432);
   }
 }
+@media (max-width: 767px) {
+  .tel_number {
+    display: block;
+    padding: 0 10px;
+    margin: 0 auto;
+    padding-top: 0;
+    margin-top: 0;
+    grid-template-rows: 0;
+  }
+  .tel_number .text_box .res_anounce {
+    margin-left: 3px;
+    font-size: 14px;
+  }
+  .tel_number .text_box .number {
+    margin-top: 5px;
+    display: inline-block;
+    letter-spacing: 5px;
+    font-size: 39px;
+  }
+  .tel_number .text_box .time {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
 
 .access {
   padding-top: 240px;
@@ -392,15 +423,57 @@ header a .logo_type {
 .access iframe:hover {
   filter: grayscale(0%);
 }
+@media (max-width: 767px) {
+  .access {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: 300px 300px;
+    column-gap: 10px;
+    row-gap: 20px;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+  .access .text_box {
+    grid-row: 1/2;
+    grid-column: 2/-2;
+  }
+  .access .text_box table {
+    display: block;
+    margin-top: 20px;
+  }
+  .access .text_box table th, .access .text_box table td {
+    padding: 10 0;
+    font-size: 16px;
+  }
+  .access .text_box table th {
+    width: 25vw;
+  }
+  .access .text_box table td {
+    width: 75vw;
+  }
+  .access .text_box a {
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+    display: inline-block;
+    margin: 20px auto 0;
+  }
+  .access iframe {
+    grid-row: 2/3;
+    grid-column: 2/-2;
+  }
+}
 
 footer {
   display: grid;
   width: 100vw;
-  height: 528px;
   background-color: #292320;
   grid-template-columns: var(--side) repeat(12, 1fr) var(--side);
   grid-template-rows: 64px 120px 278px 68px;
   column-gap: 28px;
+}
+footer img {
+  height: auto;
 }
 footer p, footer a {
   color: white;
@@ -494,6 +567,63 @@ footer .rights {
   align-self: end;
   margin-bottom: 10px;
   color: #635d55;
+}
+@media (max-width: 767px) {
+  footer {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: 50px 51px 20px 127px 192px 20px 50px;
+    column-gap: 18px;
+  }
+  footer .logo {
+    grid-column: 2/9;
+    grid-row: 2/3;
+    grid-template-columns: 52px 95px;
+    column-gap: 10px;
+  }
+  footer ul {
+    margin: 0;
+    grid-column: 2/-2;
+    grid-row: 4/5;
+    align-self: center;
+    justify-self: start;
+  }
+  footer ul li {
+    font-size: 16px;
+  }
+  footer .information {
+    grid-column: 2/-2;
+    grid-row: 5/6;
+    margin-top: 30px;
+  }
+  footer .information p.caption {
+    font-size: 14px;
+    line-height: 1;
+    color: #635d55;
+    margin-bottom: 10px;
+  }
+  footer .information .tel .main {
+    font-size: 18px;
+    line-height: 1;
+    margin: 0;
+  }
+  footer .information .address {
+    margin-top: 20px;
+  }
+  footer .information .address .sub {
+    font-size: 16px;
+    line-height: 1;
+    margin: 0 0 8px 0;
+  }
+  footer .information .address .main {
+    font-size: 16px;
+    line-height: 1;
+    margin: 0;
+  }
+  footer .rights {
+    grid-column: 1/-1;
+    grid-row: 7/8;
+    font-size: 12px;
+  }
 }
 
 body {

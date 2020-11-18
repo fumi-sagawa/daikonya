@@ -6,7 +6,7 @@ main {
     [counter] auto 
     [gap2] 180px
     [table] auto
-    [gap2] 180px
+    [gap3] 180px
     [single_room] auto
     // [gap4] 160px ページ内リンクの位置調整につき無効化
     [tel_number] auto
@@ -14,6 +14,24 @@ main {
     [access] auto
     [gap6] 160px
   ;
+  @media (max-width: 767px) {
+    // grid-template-columns: 0.64fr 7.57fr 1.79fr;
+    // grid-template-rows: 2.12fr 7.39fr  0.48fr;
+    grid-template-rows: 
+    [hero] 100vh
+    [gap1] 49px
+    [counter] auto 
+    [gap2] 62px
+    [table] auto
+    [gap3] 75px
+    [single_room] auto
+    [gap4] 75px
+    [tel_number] auto
+    [gap5] 75px
+    [access] auto
+    [gap6] 20px
+  ;
+  }
 }
 
 .hero{
@@ -56,14 +74,10 @@ main {
       object-fit: cover;
       object-position: 30% 50%;
       vertical-align: bottom;
-      height: 100%;
     }
   }
   .grad{
     grid-area: 2/2/3/3;
-    img {
-      height: 100%;
-    }
   }
   &::after {
     grid-area: 3/1/4/2;
@@ -123,10 +137,32 @@ main {
     grid-row: 1/-1;
     img{
       object-fit: cover;
-      height: 100%;
+    }
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 20px ;
+    figure img{
+      object-fit: fill;
+      height: auto;
+    }
+    h2,p,figure {
+      grid-column: 2/-2;
+    }
+    h2{
+      grid-row: 1/2;
+    }
+    figure{
+      grid-row: 2/3;
+    }
+    p{
+      grid-row: 3/4;
     }
   }
 }
+
 .table{
   grid-row: table;
   display: grid;
@@ -150,7 +186,28 @@ main {
     grid-row: 1/-1;
     img{
       object-fit: cover;
-      height: 100%;
+    }
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 20px ;
+    figure img{
+      object-fit: fill;
+      height: auto;
+    }
+    h2,p,figure {
+      grid-column: 2/-2;
+    }
+    h2{
+      grid-row: 1/2;
+    }
+    figure{
+      grid-row: 2/3;
+    }
+    p{
+      grid-row: 3/4;
     }
   }
 }
@@ -177,7 +234,6 @@ main {
     grid-row: 1/5;
     img{
       object-fit: cover;
-      height: 100%;
     }
   }
   .image03_2{
@@ -185,7 +241,36 @@ main {
     grid-row: 4/6;
     img{
       object-fit: cover;
-      height: 100%;
+    }
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: repeat(4, auto) ;
+    // grid-template-rows: auto auto auto auto ;
+    column-gap: 10px;
+    row-gap: 20px ;
+    figure img{
+      object-fit: fill;
+      height: auto;
+    } 
+    h2{
+      grid-row: 1/3;
+      grid-column: 9/14;
+      justify-self: center;
+      align-self: center;
+    }
+    .image03_1 {
+      grid-row: 1/3;
+      grid-column: 2/9;
+    }
+    .image03_2 {
+      grid-row: 2/4;
+      grid-column: 7/13;
+      align-self: end;
+    }
+    p{
+      grid-row: 4/5;
+      grid-column: 2/-2;
     }
   }
 }

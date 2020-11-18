@@ -1,6 +1,11 @@
 main {
   display: grid;
-  grid-template-rows: [hero] 100vh [gap1] 45px [counter] auto [gap2] 180px [table] auto [gap2] 180px [single_room] auto [tel_number] auto [access] auto [gap6] 160px;
+  grid-template-rows: [hero] 100vh [gap1] 45px [counter] auto [gap2] 180px [table] auto [gap3] 180px [single_room] auto [tel_number] auto [access] auto [gap6] 160px;
+}
+@media (max-width: 767px) {
+  main {
+    grid-template-rows: [hero] 100vh [gap1] 49px [counter] auto [gap2] 62px [table] auto [gap3] 75px [single_room] auto [gap4] 75px [tel_number] auto [gap5] 75px [access] auto [gap6] 20px;
+  }
 }
 
 .hero {
@@ -48,13 +53,9 @@ main {
   object-fit: cover;
   object-position: 30% 50%;
   vertical-align: bottom;
-  height: 100%;
 }
 .hero .grad {
   grid-area: 2/2/3/3;
-}
-.hero .grad img {
-  height: 100%;
 }
 .hero::after {
   grid-area: 3/1/4/2;
@@ -113,7 +114,30 @@ main {
 }
 .counter figure img {
   object-fit: cover;
-  height: 100%;
+}
+@media (max-width: 767px) {
+  .counter {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+  .counter figure img {
+    object-fit: fill;
+    height: auto;
+  }
+  .counter h2, .counter p, .counter figure {
+    grid-column: 2/-2;
+  }
+  .counter h2 {
+    grid-row: 1/2;
+  }
+  .counter figure {
+    grid-row: 2/3;
+  }
+  .counter p {
+    grid-row: 3/4;
+  }
 }
 
 .table {
@@ -141,7 +165,30 @@ main {
 }
 .table figure img {
   object-fit: cover;
-  height: 100%;
+}
+@media (max-width: 767px) {
+  .table {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+  .table figure img {
+    object-fit: fill;
+    height: auto;
+  }
+  .table h2, .table p, .table figure {
+    grid-column: 2/-2;
+  }
+  .table h2 {
+    grid-row: 1/2;
+  }
+  .table figure {
+    grid-row: 2/3;
+  }
+  .table p {
+    grid-row: 3/4;
+  }
 }
 
 .single_room {
@@ -169,7 +216,6 @@ main {
 }
 .single_room .image03_1 img {
   object-fit: cover;
-  height: 100%;
 }
 .single_room .image03_2 {
   grid-column: 10/-2;
@@ -177,5 +223,35 @@ main {
 }
 .single_room .image03_2 img {
   object-fit: cover;
-  height: 100%;
+}
+@media (max-width: 767px) {
+  .single_room {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+  .single_room figure img {
+    object-fit: fill;
+    height: auto;
+  }
+  .single_room h2 {
+    grid-row: 1/3;
+    grid-column: 9/14;
+    justify-self: center;
+    align-self: center;
+  }
+  .single_room .image03_1 {
+    grid-row: 1/3;
+    grid-column: 2/9;
+  }
+  .single_room .image03_2 {
+    grid-row: 2/4;
+    grid-column: 7/13;
+    align-self: end;
+  }
+  .single_room p {
+    grid-row: 4/5;
+    grid-column: 2/-2;
+  }
 }

@@ -36,13 +36,9 @@ main {
   object-fit: cover;
   object-position: 55% 50%;
   vertical-align: bottom;
-  height: 100%;
 }
 .hero .grad {
   grid-area: 2/2/5/5;
-}
-.hero .grad img {
-  height: 100%;
 }
 .hero::after {
   grid-area: 4/3/5/4;
@@ -89,14 +85,12 @@ main {
 }
 .about .noren img {
   object-fit: cover;
-  height: 100%;
 }
 .about .tennai {
   grid-area: 2/2/6/8;
 }
 .about .tennai img {
   object-fit: cover;
-  height: 100%;
 }
 .about h2 {
   grid-area: 3/9/4/14;
@@ -168,21 +162,18 @@ main {
 .dish .kakuni img {
   object-fit: cover;
   object-position: 60% 50%;
-  height: 100%;
 }
 .dish .koyadofu {
   grid-area: 5/4/7/8;
 }
 .dish .koyadofu img {
   object-fit: cover;
-  height: 100%;
 }
 .dish .sashimi {
   grid-area: 6/9/8/14;
 }
 .dish .sashimi img {
   object-fit: cover;
-  height: 100%;
 }
 .dish::after {
   content: "";
@@ -207,7 +198,6 @@ main {
 }
 .room figure img {
   object-fit: cover;
-  height: 100%;
 }
 .room h2 {
   grid-row: 1/2;

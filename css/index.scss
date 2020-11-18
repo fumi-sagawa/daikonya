@@ -46,14 +46,10 @@ main {
       object-fit: cover;
       object-position: 55% 50%;
       vertical-align: bottom;
-      height: 100%;
     }
   }
   .grad{
     grid-area: 2/2/5/5;
-    img {
-      height: 100%;
-    }
   }
   &::after {
     grid-area: 4/3/5/4;
@@ -102,14 +98,12 @@ main {
     grid-area: 1 / 9 / 3 / 14;
     img{
       object-fit: cover;
-      height: 100%;
     }
   }
   .tennai{
     grid-area: 2 / 2 / 6 / 8;
     img{
       object-fit: cover;
-      height: 100%;
     }
   }
   h2 { 
@@ -184,7 +178,6 @@ main {
     img{
       object-fit: cover;
       object-position: 60% 50%;
-      height: 100%;
     }
   }
   .koyadofu{
@@ -193,14 +186,12 @@ main {
     // margin-left: 20px;
     img{
       object-fit: cover;
-      height: 100%;
     }
   }
   .sashimi{
     grid-area: 6 / 9 / 8 / 14;
     img{
       object-fit: cover;
-      height: 100%;
     }
   }
   &::after{
@@ -225,7 +216,6 @@ main {
     grid-column: 2/8;
     img{
       object-fit: cover;
-      height: 100%;
     }
   }
   h2{

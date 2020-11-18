@@ -44,14 +44,10 @@ main {
       object-fit: cover;
       object-position: 30% 50%;
       vertical-align: bottom;
-      height: 100%;
     }
   }
   .grad{
     grid-area: 2/2/3/3;
-    img {
-      height: 100%;
-    }
   }
   &::after {
     grid-area: 3/1/4/2;
@@ -102,7 +98,6 @@ main {
     grid-column: 7/-3;
     grid-row: 2/5;
     img{
-      height: 100%;
       object-position: top;
       object-fit: none;
     }
@@ -120,7 +115,6 @@ main {
     grid-column: 3/9;
     grid-row: 6/9;
     img{
-      height: 100%;
       object-position: top;
       object-fit: none;
     }
@@ -158,7 +152,6 @@ main {
     margin-left: -28px;
     img{
       object-fit: cover;
-      height: 100%;
     } 
   }
   .text_box{

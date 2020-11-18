@@ -35,13 +35,9 @@ main {
   object-fit: cover;
   object-position: 30% 50%;
   vertical-align: bottom;
-  height: 100%;
 }
 .hero .grad {
   grid-area: 2/2/3/3;
-}
-.hero .grad img {
-  height: 100%;
 }
 .hero::after {
   grid-area: 3/1/4/2;
@@ -92,7 +88,6 @@ main {
   grid-row: 2/5;
 }
 .story .img01 img {
-  height: 100%;
   object-position: top;
   object-fit: none;
 }
@@ -110,7 +105,6 @@ main {
   grid-row: 6/9;
 }
 .story .img02 img {
-  height: 100%;
   object-position: top;
   object-fit: none;
 }
@@ -147,7 +141,6 @@ main {
 }
 .course figure img {
   object-fit: cover;
-  height: 100%;
 }
 .course .text_box {
   grid-column: 3/6;
