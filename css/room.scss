@@ -90,7 +90,13 @@ main {
     margin-bottom: -50px;
     background: rgb(45, 45, 45);
     z-index: 10;
-    animation: sdl 2.5s cubic-bezier(1, 0, 0, 1) infinite;
+    animation: sdl 2.0s cubic-bezier(1, 0, 0, 1) infinite;
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+      height: 70px;
+      margin-top: -20px;
+      margin-right: -50px;
+    }
   }
 }
 

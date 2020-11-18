@@ -2,6 +2,11 @@ main {
   display: grid;
   grid-template-rows: [hero] 100vh [story] auto [gap1] 89px [course] auto [gap2] 180px [single_menu] auto [tel_number] auto [access] auto [gap6] 160px;
 }
+@media (max-width: 767px) {
+  main {
+    grid-template-rows: [hero] 100vh [story] auto [gap1] 62px [course] auto [gap2] 75px [single_menu] auto [gap4] 75px [tel_number] auto [gap5] 75px [access] auto [gap6] 20px;
+  }
+}
 
 .hero {
   display: grid;
@@ -9,6 +14,12 @@ main {
   grid-auto-flow: row;
   grid-template-columns: 1.57fr 6.85fr 1.57fr;
   grid-template-rows: 2.7fr 6.48fr 1.23fr;
+}
+@media (max-width: 767px) {
+  .hero {
+    grid-template-columns: 24px auto 67px;
+    grid-template-rows: 142px auto 32px;
+  }
 }
 .hero h1 {
   grid-area: 2/2/3/3;
@@ -22,6 +33,13 @@ main {
   letter-spacing: 10px;
   margin-top: -60px;
   margin-right: -70px;
+}
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 66px;
+    margin-top: -50px;
+    margin-right: -45px;
+  }
 }
 .hero figure {
   pointer-events: none;
@@ -50,7 +68,15 @@ main {
   margin-bottom: -50px;
   background: #2d2d2d;
   z-index: 10;
-  animation: sdl 2.5s cubic-bezier(1, 0, 0, 1) infinite;
+  animation: sdl 2s cubic-bezier(1, 0, 0, 1) infinite;
+}
+@media (max-width: 767px) {
+  .hero::after {
+    margin-bottom: 0;
+    height: 70px;
+    margin-top: -20px;
+    margin-right: -50px;
+  }
 }
 
 @keyframes sdl {
@@ -112,6 +138,46 @@ main {
   grid-column: 10/13;
   grid-row: 8/9;
 }
+@media (max-width: 767px) {
+  .story {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: 40px auto auto auto 62px auto auto auto 40px;
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+  .story .head01 {
+    grid-column: 2/-2;
+    grid-row: 2/3;
+  }
+  .story .img01 {
+    grid-column: 2/-2;
+    grid-row: 3/4;
+  }
+  .story .img01 img {
+    object-fit: cover;
+    height: auto;
+  }
+  .story .text01 {
+    grid-column: 2/-2;
+    grid-row: 4/5;
+  }
+  .story .head02 {
+    grid-column: 2/-2;
+    grid-row: 6/7;
+  }
+  .story .img02 {
+    grid-column: 2/-2;
+    grid-row: 7/8;
+  }
+  .story .img02 img {
+    object-fit: cover;
+    height: auto;
+  }
+  .story .text02 {
+    grid-column: 2/-2;
+    grid-row: 8/9;
+  }
+}
 
 .course {
   grid-row: course;
@@ -127,8 +193,13 @@ main {
   justify-self: center;
   align-self: center;
 }
+@media (min-width: 769px) and (max-width: 1199px) {
+  .course h2 {
+    font-size: calc(28px + 34 * (100vw - 768px) / 432);
+  }
+}
 .course .description {
-  grid-column: 1/-1;
+  grid-column: 6/-6;
   grid-row: 2/3;
   justify-self: center;
   justify-self: center;
@@ -186,6 +257,47 @@ main {
     font-size: calc(12px + 4 * (100vw - 768px) / 432);
   }
 }
+@media (max-width: 767px) {
+  .course {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+  .course h2 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .course .description {
+    grid-column: 3/-3;
+  }
+  .course figure {
+    grid-column: 2/-2;
+    grid-row: 3/4;
+    margin: 0;
+  }
+  .course figure img {
+    object-fit: cover;
+    height: auto;
+  }
+  .course .text_box {
+    grid-column: 2/-2;
+  }
+  .course .text_box .price {
+    font-size: 22px;
+  }
+  .course .text_box .time {
+    font-size: 16px;
+  }
+  .course .text_box .menu {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  .course .text_box .caution {
+    font-size: 12;
+    text-align: end;
+  }
+}
 
 .single_menu {
   grid-row: single_menu;
@@ -201,8 +313,13 @@ main {
   justify-self: center;
   align-self: center;
 }
+@media (min-width: 769px) and (max-width: 1199px) {
+  .single_menu h2 {
+    font-size: calc(28px + 30 * (100vw - 768px) / 432);
+  }
+}
 .single_menu .description {
-  grid-column: 1/-1;
+  grid-column: 5/-5;
   grid-row: 2/3;
   justify-self: center;
   justify-self: center;
@@ -229,5 +346,40 @@ main {
 @media (min-width: 769px) and (max-width: 1199px) {
   .single_menu .single_image p {
     font-size: calc(14px + 6 * (100vw - 768px) / 432);
+  }
+}
+.single_menu .single_image img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .single_menu {
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+  .single_menu h2 {
+    font-size: 28px;
+  }
+  .single_menu .description {
+    grid-column: 3/-3;
+  }
+  .single_menu .single_image {
+    grid-column: 2/-2;
+    grid-row: 4/5;
+    display: grid;
+    column-gap: 14px;
+    row-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .single_menu .single_image p {
+    margin-top: 20px;
+    grid-column: 1/-1;
+  }
+  .single_menu .single_image figcaption {
+    line-height: 2;
+    font-size: 12px;
   }
 }
