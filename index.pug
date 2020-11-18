@@ -1,0 +1,41 @@
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    link(rel="stylesheet", href="css/index.css")
+    script(src="https://use.typekit.net/upr3sbd.js")
+    script try {Typekit.load({async: true});} catch (e) {}
+    title 家庭の味 だいこん家
+
+body
+  include header
+  main
+    .hero
+      h1: figure.catch: img(src="images/catch_white.svg", alt="")
+      //- h1 「ただいま」<br>と言いたくなる<br>料理と人。
+      figure.main: img(src="images/top_main.png", alt="")
+      figure.grad: img(src="images/top_main_grad.png", alt="")
+    .about
+      figure.noren: img(src="images/noren.png", alt="")
+      figure.tennai: img(src="images/tennai.png", alt="")
+      h2 台所から、<br>腕によりをかけて
+      p 「だいこん役者のような、取り柄のない自分でも誰かを笑顔にできないだろうか」<br>そんな思いからお店をはじめ早25年が経ちました。<br>日が沈んで、年が明けて時代が変わっても、好きだった、あの懐かしい味は変わりません。<br>特別な料理じゃないからこそ精一杯腕をふるって。<br>従業員一同、身も心も、ほっと暖かくなる時間をお届けします。　
+    .dish
+      .text_box
+      h2 家庭の味を、<br>美味しいお酒と一緒に
+      figure.kakuni: img(src="images/kakuni_top.png", alt="")
+      p 甘さが溶け出てお口にじゅわっと広がる、<br>たれが染み込んだ大根とお肉。<br>みずみずしくて脂がのった、<br>その日捌いた新鮮な刺身。<br>あてに一杯お酒をやれば、<br>自然とため息がこぼれ出ます。
+      a(href="dish.html") 詳しく見る
+      figure.koyadofu: img(src="images/koyadofu_top.png", alt="")
+      figure.sashimi: img(src="images/sashimi_top.png", alt="")
+    .room
+      h2 おひとりさまでも、<br>大勢でもどうぞ
+      figure: img(src="images/table_top.png", alt="")
+      p カウンターやテーブル、個室と多様なお部屋をご用意しています。少し大きなお部屋もありますので、宴会などにどうぞ。
+      a(href="room.html") 詳しく見る
+
+    include tel_access
+
+  include footer
+  

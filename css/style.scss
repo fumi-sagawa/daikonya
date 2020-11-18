@@ -1,0 +1,534 @@
+@charset "UTF-8";
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  background-color: white;
+}
+
+// 基本設定
+* {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: ten-mincho-text, serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #faf6ed;
+  a {
+    text-decoration: none;
+  }
+}
+
+
+
+// フォント設定
+h2 {
+  font-size: 48px;
+  font-weight: 400;
+  color: #343434;
+  letter-spacing: 0.05em;
+  line-height: 1.48;
+  @media (min-width: 769px) and (max-width: 1199px) {
+    font-size: calc(28px + 20 * (100vw - 768px) / 432);
+  }
+  @media (max-width: 767px) {
+    font-size: 28px;
+    line-height: 2.07;
+  }
+}
+
+p{
+  font-size: 20px;
+  font-weight: 400;
+  color: #343434;
+  letter-spacing: 0.1em;
+  line-height: 2.3;
+  @media (min-width: 769px) and (max-width: 1199px) {
+    font-size: calc(16px + 4 * (100vw - 768px) / 432);
+  }
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 2.375;
+  } 
+}
+
+
+
+
+// ここからパーツ
+
+
+header {
+  position: fixed;
+  top: 47px;
+  left: 57px; 
+  position: fixed;
+  @media (max-width: 767px) {
+    top: 28px;
+    left: 32px; 
+  }
+  a{
+    display: grid;
+    grid-template-columns: 74px 148px;
+    column-gap: 20px;
+    .logo_type{
+      align-self: center;
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: 45px 82px;
+      column-gap: 9px;
+    }
+  }
+}
+
+
+ .desktop_navigation {
+  position: fixed;
+  top: 76px;
+  right: 76px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 40px;
+  ul{
+    display: grid;
+    grid-auto-flow: column;
+    list-style-type: none;
+    gap: 40px;
+    &:nth-child(2){
+      border-width:1px;
+      border-color:#343434;
+      border-left-style: solid;	
+    }
+    li{
+      transition: 0.4s;
+      border-bottom: solid 1px rgba(0,0,0,0);
+      &:hover{
+        border-bottom: solid 1px #343434;
+      }
+      a{
+        color: #343434
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+
+
+.mobile_menu_button_humbergur{
+  position: fixed;
+  top: 28px;
+  right: 43px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background: none;
+  display: grid;
+  row-gap: 7px;
+  align-content: center;
+  span {
+    background-color: #343434;
+    display: block;
+    width: 35px;
+    height: 1px;
+  }
+  @media (min-width: 767px) {
+    display: none;
+  }
+}
+
+
+
+.mobile_navigation{
+  @media (min-width: 767px) {
+    display: none;
+  }
+  //アニメーション用透過度
+  opacity: 0%;
+  position: fixed;
+  z-index: 100;
+  height: 100vh;
+  width: 100vw;
+  background-color: #292320;
+  .logo_area{
+    position: fixed;
+    top: 28px;
+    left: 32px; 
+    display: grid;
+    grid-template-columns: 45px 82px;
+    column-gap: 9px;
+    .logo_type{
+      align-self: center;
+    }
+  }
+  .mobile_menu_button{
+    position: fixed;
+    top: 28px;
+    right: 43px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background: none;
+    display: grid;
+    align-content: center;
+    span {
+      background-color: white;
+      display: block;
+      width: 35px;
+      height: 1px;
+    }
+    .line1 {
+      transform: rotate(45deg);
+    }
+    .line2 {
+      transform: rotate(-45deg);
+    }
+  }
+  .information_area{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 24px repeat(12,1fr) 24px;
+    column-gap: 10px;
+    grid-template-rows: 5fr 3.45fr 1.54fr;
+    p,a {
+      color: white;
+    }
+    .drawer_navigation{
+      grid-column: 3/-3;
+      grid-row: 1/2;
+      align-self: end;
+      padding-bottom: 30px;
+      border-bottom: white solid 1px;
+      ul{
+        list-style-type: none;
+        padding-inline-start: 0;
+        display: grid;
+        row-gap: 22px;
+        a{
+          font-size: 28;
+        }
+      }
+    }
+    .drawer_information{
+      grid-column: 3/-3;
+      grid-row: 2/3;
+      margin-top: 30px;
+      .caption{
+        font-size: 18px;
+        line-height: 1;
+        color: rgb(99, 93, 85);
+        margin-bottom: 10px;
+      }
+      .tel{
+        .main{
+          font-size: 28px;
+          line-height: 1;
+        }
+      }
+      .address{
+        margin-top: 20px;
+        .sub{
+          font-size: 16px;
+          line-height: 1;
+          margin-bottom: 8px;
+        }
+        .main{
+          font-size: 16px;
+          line-height: 1;
+        }
+      }
+    }
+    .map {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 0px;
+      grid-column: 3/-3;
+      grid-row: 3/4;
+      align-self: start;
+      justify-self: center;
+      text-align: center;
+      border: solid 1px white;
+      font-size: 20px;
+      letter-spacing: 0.1rem;
+      font-family: sans-serif;
+    }
+  }
+}
+
+    
+
+
+
+.tel_number {
+  // ページ内リンクの位置調整
+  padding-top: 300px;
+  margin-top: -140px;
+
+  grid-row: tel_number;
+  display: grid;
+  grid-template-columns: var(--side) repeat(12,1fr) var(--side);
+  grid-template-rows: 406px;
+  column-gap: 28px;
+  .text_box{
+    grid-column: 1/-1;
+    align-self: center;
+    justify-self: center;
+    .res_anounce{
+      font-size: 32px;
+      letter-spacing: 0.2rem;
+      line-height: 1.5;
+      margin-bottom: -10px;
+      margin-left: 5px;
+
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: calc(14px + 18 * (100vw - 768px) / 432);
+      }
+    }
+    }
+    .number{
+      font-size: 82px;
+      letter-spacing: 0.5rem;
+      line-height: 1.43;
+      border-bottom: 10px double #E6DDC3;
+      transition: 0.4s;
+      a{
+        color:  #343434;
+      }
+      &:hover{
+      border-bottom: 10px double #988C79;
+      }
+
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: calc(39px + 43 * (100vw - 768px) / 432);
+      }
+    }
+     
+    .time{
+      font-size: 20px;
+      letter-spacing: 0.05rem;
+      line-height: 1.0;
+      margin-top: 20px;
+      margin-left: 5px;
+
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: calc(14px + 6 * (100vw - 768px) / 432);
+      }
+    }
+
+}
+
+.access {
+  // ページ内リンクの位置調整
+  padding-top: 240px;
+  margin-top: -80px;
+
+  grid-row: access;
+  display: grid;
+  grid-template-columns: var(--side) repeat(12,1fr) var(--side);
+  grid-template-rows: 654px;
+  column-gap: 28px;
+  .text_box {
+    grid-column: 2/7;
+    table{
+      color: #343434;
+      font-size: 20px;
+      display: block;
+      margin-top: 76px;
+      text-align: left;
+      border-collapse: collapse;
+      th{
+        padding: 28px 50px 28px 0px;
+        font-weight: normal;
+      }
+      td {
+        padding-right: 50px;
+      }
+      td,th{
+        border-top: 1px solid #CCC2B2;
+        border-bottom: 1px solid #CCC2B2;
+      }
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: calc(16px + 4 * (100vw - 768px) / 432);
+      }
+    }
+    a{
+      font-size: 18;
+      font-family: sans-serif;
+      font-weight: 400;
+      color: #988C79;
+      padding: 14px 70px;
+      display: inline-block;
+      margin-top: 54px;
+      border: 2px solid #988C79;
+      transition: 0.15s;
+      &:hover{
+        background-color: #988C79;
+        color: white;
+      }
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: 16px;
+        padding: 14px 70px;
+        margin-top: 54px;
+      }
+    }
+  }
+  iframe{
+    grid-column: 7/-1;
+    filter: grayscale(100%);
+    transition: 0.5s;
+    &:hover{
+      filter: grayscale(0%);
+    }
+  }
+}
+
+
+
+footer {
+  display: grid;
+  width: 100vw;
+  height: 528px;
+  background-color: #292320;
+  grid-template-columns: var(--side) repeat(12,1fr) var(--side);
+  grid-template-rows: 64px 120px 278px 68px;
+  column-gap: 28px;
+  p,a {
+    color: white;
+  }
+  .logo{
+    grid-area: 2/3/3/6;
+    display: grid;
+    grid-template-columns: 100px 180px;
+    column-gap: 20px;
+    align-items: center;
+    @media (min-width: 769px) and (max-width: 1199px) {
+      grid-template-columns: 70px 150px;
+    }
+  }
+  ul {
+    list-style: none;
+    grid-area: 3/3/4/7;
+    margin-top: 30px;
+    padding-inline-start: 0;
+    margin-left: 10px;
+    li {
+      justify-self: left;
+      font-size: 23px;
+      line-height: 2.5;
+      letter-spacing: 0.2rem;
+      a {
+        border-bottom: solid 1px rgba(0,0,0,0);
+        transition: 0.4s;
+        &:hover{
+          border-bottom: solid 1px white;
+        }
+      }
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: calc(16px + 7 * (100vw - 768px) / 432);
+      }
+    }
+  }
+  .information {
+    grid-area: 2/8/4/14;
+    margin-top: 35px;
+    p.caption {
+      line-height: 1;
+      color: rgb(99, 93, 85);
+      font-size: 24px;
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: calc(14px + 10 * (100vw - 768px) / 432);
+      }
+    }
+    p.main {
+      line-height: 1;
+      font-size: 34px;
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: calc(18px + 14 * (100vw - 768px) / 432);
+      }
+    }
+    p.sub{
+      line-height: 1;
+      font-size: 22px;
+      @media (min-width: 769px) and (max-width: 1199px) {
+        font-size: calc(14px + 8 * (100vw - 768px) / 432);
+      }
+    }
+    .tel{
+      .main{
+        margin-top: 16px;
+      }
+    }
+    .address{
+      margin-top: 50px;
+      .sub {
+        margin-top: 16px;
+      }
+      .main{
+        margin-top: 12px;
+      }
+    }
+  }
+  .rights{
+    font-size: 14px;
+    font-family: sans-serif;
+    grid-area: 4/1/5/15;
+    justify-self: center;
+    align-self: end;
+    margin-bottom: 10px;
+    color: rgb(99, 93, 85)
+  }
+}
+
+
+
+// @media (min-width: 1000px) {
+//   body{
+//     --side: calc( (100vw - 1350px) / 2 );
+//   }
+// }
+
+body{
+  --side: calc( (100vw - 1550px) / 2 );
+}
+
+
+// 読み込み時アニメーションhttps://q-az.net/fadein-open-only-css/
+body {
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+  animation: fadeIn 2s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}

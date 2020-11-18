@@ -1,0 +1,68 @@
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    link(rel="stylesheet", href="css/dish.css")
+    script(src="https://use.typekit.net/upr3sbd.js")
+    script try {Typekit.load({async: true});} catch (e) {}
+    title お料理 - 家庭の味 だいこん家
+
+body
+  include header
+
+ 
+  main
+    .hero
+      h1 お料理
+      figure.main: img(src="images/oryori_main.png", alt="")
+      figure.grad: img(src="images/oryori_main_grad@2x.png", alt="")
+    section.story
+      h2.head01 ひとつひとつ丁寧に。
+      figure.img01: img(src="images/kakuni_making.png", alt="")
+      p.text01 醤油にみりん、お砂糖とお塩にすこしの隠し味を入れて。だいこん家では、店主みずからまいにち時間をかけて料理をお作りしています。美味しかったらぜひ感想をお聞かせください。
+      h2.head02 自慢のお酒
+      figure.img02: img(src="images/nihonsyu.png", alt="")
+      p.text02 福島をはじめとし、全国から20種類を超える日本酒を取り揃えました。ビールや焼酎はもちろん、定番のお酒も豊富にご用意しております。
+    .course
+      h2 コース
+      p.description  宴会の際には、刺し身、煮物、煮魚がそろった<br>お得なコースをどうぞ。
+      figure: img(src="images/otsukuri.png", alt="")
+      .text_box
+        p.price  5,500円〜
+        p.time  120分 飲み放題込
+        p.menu 前菜三種盛り<br>サラダ<br>高野豆腐の肉詰め<br>お刺身<br>煮魚<br>だいこんと角煮と煮玉子<br>あげもの盛り合わせ<br>デザート
+        p.caution ※ 料理、また写真は一例です。
+    .single_menu
+      h2 単品のお料理
+      p.description 名物「だいこんと角煮と煮玉子」をはじめとし、<br>福島いわきの美味しい家庭料理を取り揃えました。
+      .single_image
+        figure
+          figure: img(src="images/kakuni.png", alt="")
+          figcaption だいこんと角煮と煮玉子
+        figure
+          figure: img(src="images/koyadofu.png", alt="")
+          figcaption 高野豆腐の肉詰め
+        figure
+          figure: img(src="images/mehikari_karaage.png", alt="")
+          figcaption めひかりの唐揚げ
+        figure
+          figure: img(src="images/mehikari_hirakiyaki.png", alt="")
+          figcaption めひかりの開き焼き
+        figure
+          figure: img(src="images/gingarei.png", alt="")
+          figcaption ぎんがれいの煮付け
+        figure
+          figure: img(src="images/toriyaki.png", alt="")
+          figcaption 鳥焼き
+        figure
+          figure: img(src="images/misoimo.png", alt="")
+          figcaption みそいも
+        figure
+          figure: img(src="images/potetosarad.png", alt="")
+          figcaption ポテトサラダ
+        p 他にもたくさんの料理を<br>ご用意しております。
+      
+    include tel_access
+
+  include footer
