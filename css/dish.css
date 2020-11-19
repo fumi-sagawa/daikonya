@@ -1,28 +1,28 @@
 main {
   display: grid;
-  grid-template-rows: [hero] 100vh [story] auto [gap1] 89px [course] auto [gap2] 180px [single_menu] auto [tel_number] auto [access] auto [gap6] 160px;
+  grid-template-rows: [hero] calc(var(--vh, 1vh) * 100) [story] auto [gap1] 89px [course] auto [gap2] 180px [single_menu] auto [tel_number] auto [access] auto [gap6] 160px;
 }
 @media (max-width: 767px) {
   main {
-    grid-template-rows: [hero] 100vh [story] auto [gap1] 62px [course] auto [gap2] 75px [single_menu] auto [gap4] 75px [tel_number] auto [gap5] 75px [access] auto [gap6] 20px;
+    grid-template-rows: [hero] calc(var(--vh, 1vh) * 100) [story] auto [gap1] 62px [course] auto [gap2] 75px [single_menu] auto [gap4] 75px [tel_number] auto [gap5] 75px [access] auto [gap6] 20px;
   }
 }
 
 .hero {
-  display: grid;
   grid-row: hero;
-  grid-auto-flow: row;
-  grid-template-columns: 1.57fr 6.85fr 1.57fr;
-  grid-template-rows: 2.7fr 6.48fr 1.23fr;
+  display: grid;
+  grid-template-columns: 1.57fr 6.41fr 0.43fr 0.43fr 1.13fr;
+  grid-template-rows: 1.53fr 0.66fr 2.87fr 3.62fr 1.3fr;
 }
 @media (max-width: 767px) {
   .hero {
-    grid-template-columns: 24px auto 67px;
-    grid-template-rows: 142px auto 32px;
+    grid-template-columns: 0.64fr 6.72fr 0.8fr 0.8fr 1.04fr;
+    grid-template-rows: 1.5fr 0.64fr 2.47fr 4.91fr 0.47fr;
   }
 }
 .hero h1 {
-  grid-area: 2/2/3/3;
+  grid-row: 2/-2;
+  grid-column: 3/-2;
   z-index: 10;
   align-self: start;
   justify-self: end;
@@ -31,23 +31,22 @@ main {
   color: #343434;
   font-weight: normal;
   letter-spacing: 10px;
-  margin-top: -60px;
-  margin-right: -70px;
 }
 @media (max-width: 767px) {
   .hero h1 {
     font-size: 66px;
-    margin-top: -50px;
-    margin-right: -45px;
+    line-height: 1;
   }
 }
 .hero figure {
   pointer-events: none;
   -webkit-user-select: none;
           user-select: none;
+  box-sizing: border-box;
 }
 .hero .main {
-  grid-area: 2/2/3/3;
+  grid-row: 3/-2;
+  grid-column: 2/-3;
 }
 .hero .main img {
   object-fit: cover;
@@ -55,10 +54,12 @@ main {
   vertical-align: bottom;
 }
 .hero .grad {
-  grid-area: 2/2/3/3;
+  grid-row: 3/-2;
+  grid-column: 2/-3;
 }
 .hero::after {
-  grid-area: 3/1/4/2;
+  grid-row: 5/-1;
+  grid-column: 1/2;
   content: "";
   bottom: 0;
   justify-self: right;

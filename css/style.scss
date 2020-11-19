@@ -33,8 +33,6 @@ body {
   }
 }
 
-
-
 // フォント設定
 h2 {
   font-size: 48px;
@@ -73,6 +71,7 @@ p{
 
 
 header {
+  z-index: 100;
   img{
     height: auto;
   }
@@ -100,6 +99,7 @@ header {
 
 
  .desktop_navigation {
+  z-index: 100;
   position: fixed;
   top: 76px;
   right: 76px;
@@ -135,6 +135,7 @@ header {
 
 
 .mobile_menu_button_humbergur{
+  z-index: 100;
   position: fixed;
   top: 28px;
   right: 43px;
@@ -142,8 +143,8 @@ header {
   width: 50px;
   border: none;
   background: none;
-  display: grid;
-  row-gap: 7px;
+  // display: grid;
+  // row-gap: 7px;
   align-content: center;
   span {
     background-color: #343434;
@@ -151,6 +152,7 @@ header {
     display: block;
     width: 35px;
     height: 1px;
+    margin: 6px 0;
   }
   @media (min-width: 767px) {
     display: none;
@@ -167,12 +169,13 @@ header {
     display: none;
   }
   //アニメーション用透過度https://nansystem.com/opacity-0-vs-visibility-hidden-vs-display-none/
-  opacity: 0%;
+  // opacity: 0%;
   visibility: hidden;
+  // opacity: 100%;
 
   position: fixed;
   z-index: 100;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   background-color: #292320;
   .logo_area{
@@ -230,7 +233,7 @@ header {
         display: grid;
         row-gap: 22px;
         a{
-          font-size: 28;
+          font-size: 24px;
         }
       }
     }

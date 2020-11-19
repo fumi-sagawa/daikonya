@@ -1,7 +1,7 @@
 main {
   display: grid;
   grid-template-rows: 
-    [hero] 100vh
+    [hero] calc(var(--vh, 1vh) * 100)
     [gap1] 95px
     [about] auto
     [gap2] 246px
@@ -16,7 +16,7 @@ main {
   ;
   @media (max-width: 767px) {
     grid-template-rows: 
-    [hero] 100vh
+    [hero]  calc(var(--vh, 1vh) * 100)
     [gap1] 24px
     [about] auto
     [gap2] 100px
@@ -94,8 +94,8 @@ main {
   }
   grid-row: hero;
   display: grid;
-  grid-template-columns: 20px auto 98px 26px 20px;
-  grid-template-rows: 20px auto 235px 60px 20px;
+  grid-template-columns: 20px 1fr 98px 26px 20px;
+  grid-template-rows: 20px 1fr 235px 60px 20px;
   gap: 0px 0px;
   .heading1{
     grid-area: 3/3/4/4;

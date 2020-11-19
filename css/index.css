@@ -1,10 +1,10 @@
 main {
   display: grid;
-  grid-template-rows: [hero] 100vh [gap1] 95px [about] auto [gap2] 246px [dish] auto [gap3] 158px [room] auto [tel_number] auto [access] auto [gap6] 160px;
+  grid-template-rows: [hero] calc(var(--vh, 1vh) * 100) [gap1] 95px [about] auto [gap2] 246px [dish] auto [gap3] 158px [room] auto [tel_number] auto [access] auto [gap6] 160px;
 }
 @media (max-width: 767px) {
   main {
-    grid-template-rows: [hero] 100vh [gap1] 24px [about] auto [gap2] 100px [dish] auto [gap3] 84px [room] auto [gap4] 100px [tel_number] auto [gap5] 100px [access] auto [gap6] 20px;
+    grid-template-rows: [hero] calc(var(--vh, 1vh) * 100) [gap1] 24px [about] auto [gap2] 100px [dish] auto [gap3] 84px [room] auto [gap4] 100px [tel_number] auto [gap5] 100px [access] auto [gap6] 20px;
   }
 }
 
@@ -70,8 +70,8 @@ main {
 .hero_mobile {
   grid-row: hero;
   display: grid;
-  grid-template-columns: 20px auto 98px 26px 20px;
-  grid-template-rows: 20px auto 235px 60px 20px;
+  grid-template-columns: 20px 1fr 98px 26px 20px;
+  grid-template-rows: 20px 1fr 235px 60px 20px;
   gap: 0px 0px;
 }
 @media (min-width: 500px) {
